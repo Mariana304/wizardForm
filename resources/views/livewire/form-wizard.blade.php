@@ -3,22 +3,22 @@
         <div class="text-center mb-4">
             <div class="relative">
 
-                <div class="w-full h-2 p-2   absolute  top-3">
+                <div class="w-full h-2 p-2   absolute  top-2">
                     <div class="border-2 bg-[#F4F4F4]">
                         <div class="h-1 bg-[#D75672] border-2 border-[#D75672]" style="width: {{ $step * 33.33 }}%;">
                         </div>
                     </div>
                 </div>
                 <div class="w-full flex items-center justify-between relative">
-                    <div class="w-12 h-12 rounded-full relative {{ $step >= 1 ? 'bg-[#D75672] ' : 'bg-gray-300' }}">
-                        <p class="text-xl font-light mt-2 {{ $step >= 1 ? 'text-slate-100' : 'text-gray-500' }}">1</p>
+                    <div class="w-9 h-9 rounded-full relative {{ $step >= 1 ? 'border-2 bg-white border-[#D75672] ' : 'bg-gray-300' }}">
+                        <p class="text-xl font-light mt-1 {{ $step >= 1 ? 'text-slate-100' : 'text-gray-500' }}">1</p>
                     </div>
-                    <div class="w-12 h-12 rounded-full   relative {{ $step >= 2 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
-                        <p class="text-xl font-light mt-2 {{ $step >= 2 ? 'text-slate-100' : 'text-gray-500' }}">2</p>
+                    <div class="w-9 h-9  rounded-full   relative {{ $step >= 2 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
+                        <p class="text-xl font-light mt-1 {{ $step >= 2 ? 'text-slate-100' : 'text-gray-500' }}">2</p>
 
                     </div>
-                    <div class="w-12 h-12  rounded-full  relative {{ $step >= 3 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
-                        <p class="text-xl font-light mt-2 {{ $step >= 3 ? 'text-slate-100' : 'text-gray-500' }}">3</p>
+                    <div class="w-9 h-9   rounded-full  relative {{ $step >= 3 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
+                        <p class="text-xl font-light mt-1 {{ $step >= 3 ? 'text-slate-100' : 'text-gray-500' }}">3</p>
 
                     </div>
                 </div>
@@ -141,12 +141,12 @@
 
     <div class="mt-4 flex justify-between">
         @if ($step > 1)
-            <button wire:click="previousStep" class="bg-yellow-600 text-white p-2 rounded-md">Anterior</button>
+            <button wire:click="previousStep" class="bg-[#D75672] text-white p-2 rounded-md">Anterior</button>
         @endif
         <div></div>
         @if ($step < 3)
             <button wire:click="nextStep" id="recargarInput"
-                class="bg-[#D75672] text-white p-2 rounded-md">Siguiente</button>
+                class="bg-[#FD315D] text-white p-2 rounded-md">Siguiente</button>
         @endif
     </div>
 
@@ -162,7 +162,6 @@
             </h2>
         </div>
     @endif
-
 </div>
 
 @push('scripts')

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Content;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -126,6 +127,11 @@ class FormWizard extends Component
             'data.14.campo14' => 'El campo 14 es requerido',
             'data.15.campo15' => 'El campo 15 es requerido'
         ]);
+
+        Content::create([
+            'content' => $this->content,
+        ]);
+        
         $this->success = true;
     }
 }
