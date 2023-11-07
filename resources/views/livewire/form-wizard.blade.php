@@ -1,28 +1,27 @@
 <div class="max-w-full mx-auto p-6 bg-white rounded-md shadow">
     <div class="mb-8 px-32">
         <div class="text-center mb-4">
-            <div class="relative">
+            <div class="relative ">
 
                 <div class="w-full h-2 p-2   absolute  top-2">
-                    <div class="border-2 bg-[#F4F4F4]">
-                        <div class="h-1 bg-[#D75672] border-2 border-[#D75672]" style="width: {{ $step * 33.33 }}%;">
+                    <div class=" bg-[#F1F1F1]">
+                        <div class="h-1 bg-[#F1F1F1] border-2 border-[#D75672]" style="width: {{ $step * 33.33}}%;">
                         </div>
                     </div>
                 </div>
                 <div class="w-full flex items-center justify-between relative">
-                    <div class="w-9 h-9 rounded-full relative {{ $step >= 1 ? 'border-2 bg-white border-[#D75672] ' : 'bg-gray-300' }}">
+                    <div class="w-9 h-9 rounded-full relative {{ $step >= 1 ? 'bg-[#D75672] ' : 'bg-gray-300' }}">
                         <p class="text-xl font-light mt-1 {{ $step >= 1 ? 'text-slate-100' : 'text-gray-500' }}">1</p>
                     </div>
-                    <div class="w-9 h-9  rounded-full   relative {{ $step >= 2 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
+                    <div class="w-9 h-9 rounded-full   relative {{ $step >= 2 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
                         <p class="text-xl font-light mt-1 {{ $step >= 2 ? 'text-slate-100' : 'text-gray-500' }}">2</p>
 
                     </div>
-                    <div class="w-9 h-9   rounded-full  relative {{ $step >= 3 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
+                    <div class="w-9 h-9  rounded-full  relative {{ $step >= 3 ? 'bg-[#D75672] ' : 'bg-[#DDDDDD]' }}">
                         <p class="text-xl font-light mt-1 {{ $step >= 3 ? 'text-slate-100' : 'text-gray-500' }}">3</p>
 
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -150,20 +149,23 @@
         @endif
     </div>
 
-    @if ($success === true)
-        <div class="max-w-md mx-auto p-6 bg-white rounded-md shadow">
-            <div class="text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto text-green-500" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
+    @if ($step > 3)
+        @if ($success === true)
+            <div class="max-w-md mx-auto p-6 bg-white rounded-md shadow">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto text-green-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="mt-6 text-2xl font-semibold text-center text-gray-800">El formulario ha sido diligenciado con
+                    éxito
+                </h2>
             </div>
-            <h2 class="mt-6 text-2xl font-semibold text-center text-gray-800">El formulario fue diligenciado con éxito
-            </h2>
-        </div>
+        @endif
     @endif
+    </form>
 </div>
-
 @push('scripts')
     <script>
         const trixEditor = document.getElementById('x');

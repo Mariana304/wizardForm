@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Livewire\WithFileUploads;
 use App\Models\Content;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -29,11 +30,13 @@ class FormWizard extends Component
     ];
 
     public $content;
+    public $newFiles= [];
 
 
 
     public $success = false;
 
+  
     public function render()
     {
         return view('livewire.form-wizard');
@@ -133,6 +136,9 @@ class FormWizard extends Component
         ]);
         
         $this->success = true;
+        if ($this->step < 4) {
+            $this->step++;
+        }
     }
 }
 
